@@ -36,7 +36,7 @@ buildGroupObject = ->
   staticGroups = _.map(staticGroups, (val, item, array) -> [val[0],
     '@' + val[1].replace(/,/g, ' @')])
   # Convert 2D list to native object
-  groupCache = _.object(staticGroups)
+  groupCache = _.fromPairs(staticGroups)
   return groupCache
 
 # Return Groups Mentioned in a message if there is a dynamic group.
